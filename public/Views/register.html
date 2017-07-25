@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,target-densitydpi=device-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name=”format-detection” content=”telephone=no” />
+		<!--<script type="text/javascript" src="../js/controller/flexible.js"></script>-->
+		<title>2017-07-11开会代购项目----登录</title>
+		<link rel="stylesheet" type="text/css" href="./../Styles/css/style.css">
+	</head>
+	<body>
+	<div class="p_login_img p_tab_title" id="p_log_reg">
+		<div class="p_item_log" id="p_login_page">登录</div>
+  		<div class="p_item_reg" id="p_reg_page">注册</div>
+  		<span class="p_triangle_log"></span>
+  		<span class="p_triangle_reg"></span>
+	</div>
+	<div class="p_tab_cont">
+		<div class="p_logcont">
+			<div class="p_reg_input">
+				<input class="p_log_emil" id="login_email" type="text" placeholder="187367951@qq.com" />
+				<p></p>
+			</div>
+			<div class="p_reg_input">
+				<input class="p_log_password" id="login_password" type="text" placeholder="请输入您的密码" />
+				<p></p>
+			</div>
+			<button class="p_log_btn" id="p_log_btn">登录</button>
+			<div class="p_forget_password"><a id="p_forget_password" href="javascript:;">忘记密码</a></div>
+		</div>
+		<div class="p_regcont">
+			<div class="p_reg_input">
+				<input class="p_log_emil p_reg_emil" id="register_email" type="text" placeholder="输入一个可靠的邮箱" />
+				<p></p>
+			</div>
+			<div class="p_reg_input">
+				<input class="p_log_emil p_reg_password" id="register_password" type="text" placeholder="设置一个8-16位的密码" />
+				<p></p>
+			</div>
+			<div class="p_reg_input">
+				<input class="p_log_emil p_reg_pw2" id="register_password2" type="text" placeholder="劳烦再输入一次密码" />
+				<p></p>
+			</div>
+			<div class="p_reg_input">
+				<input class="p_log_emil p_reg_name" id="register_nickname" type="text" placeholder="取个响亮的昵称吧" />
+				<p></p>
+			</div>
+			<button class="p_log_btn" id="p_reg_btn">注册</button>
+		</div>
+	</div>
+	<div id="p_reg_mask" class="p_reg_mask">
+		<span id="p_close" class="p_close"></span>
+		<div class="p_mail"><img src="../Styles/images/mail.png" /></div>
+		<h4>谢谢您的注册</h4>
+		<p>激活邮件已经发送到您的邮箱赶紧去激活吧!</p>
+		<div class="p_goemil" id="p_goemil"><a href="javascript:;">去邮箱激活</a></div>
+	</div>
+	<div id="p_reg_maskerror" class="p_reg_mask">
+		<!--<span id="p_close" class="p_close"></span>
+		<div class="p_mail"><img src="../Styles/images/mail_error.png" /></div>
+		<h4>谢谢您的注册</h4>
+		<p>激活邮件已经发送到您的邮箱赶紧去激活吧!</p>
+		<div class="p_goemil" id="p_goemil"><a href="javascript:;">去邮箱激活</a></div>-->
+	</div>
+	<script type="text/javascript" src="./../Script/Libs/jquery.1.9.min.js"></script>
+	<script type="text/javascript" src="./../Script/main.js"></script>
+	<script type="text/javascript" src="./../Script/Controller/register.js"></script>
+	<script type="text/javascript" src="./../Script/Libs/jquery.cookie-min.js"></script>
+
+	</body>
+</html>

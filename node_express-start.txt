@@ -1,0 +1,14 @@
+nodejs---express
+搭建：
+1.新建文件夹
+sudo npm init
+sudo npm install express --save
+sudo npm install body-parser --save
+sudo npm install cookie-parser --save
+sudo npm install multer --save
+2.启动：sudo node index.js
+3.去除锁
+sudo chmod -R 777 文件夹
+
+
+

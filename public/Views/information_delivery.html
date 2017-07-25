@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>信息发布</title>
+		<link href="../Styles/css/style.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body style="height: 100%;">
+		<div class="z_wrap z_flex z_flex-v ">
+		    <div class="z_header"><h3><img src="../Styles/images/goback.png"  class="z_return"/>信息发布</h3></div>
+		    <div class="z_main z_flex-1 z_main_information">
+		    	<div class="z_background">
+		    	<p class="z_information_p">求购一坛82年韩国思密达泡菜，需要包装完好，要不发霉
+的，最好是能吃的！</p>
+		    	<div class="z_text_div">
+					<textarea  class="none" cols="58" rows="6" id="textarea" onfocus="if(value=='详细描述一下您的求购物品'){value=''}"  
+	    onblur="if (value ==''){value='详细描述一下您的求购物品'}">详细描述一下您的求购物品</textarea>  
+	
+				</div>
+				<img src="../Styles/images/z_add_add.png" class="z_add_pic" />
+				<div class="z_inp">
+				<input accept="image/*" type="file" class="z_input_h5">
+				<img src="../Styles/images/z_add_p.png" class="z_add_p"/>
+				</div>	
+				<p class="z_information_p1"><span>分类</span><span class="z_choice_span">选择分类</span><img src="../Styles/images/z_more.png" class="z_more" /></p>
+				</div>
+				<div class="z_goodsadd">
+					<p>请选择物品区域</p>
+					<div class="z_add_country">
+						<span class="z_country z_country1">美国<img src="../Styles/images/z_cancel.png"/></span>
+						<span class="z_country z_country1 ">意大利<img src="../Styles/images/z_cancel.png"/></span>
+						<img src="../Styles/images/z_add_add.png" class="z_add_add "/>
+						<div style="clear: both;"></div>
+					</div>
+				</div>	
+				<div class="z_goodsadd">
+					<p>请选择物品区域</p>
+					<div class="z_add_country">
+						<img src="../Styles/images/z_add_add.png" class="z_add_add"/>
+					</div>
+				</div>	
+				<div class="z_goodsadd z_goodsadd1">
+					<!--<img src="../Styles/images/z_shuxian.png"/>-->
+					<p>请选择费用</p>
+					<div class="z_money">
+						<dl class="z_left">
+							<dd>￥<input type="text" placeholder="0"/></dd>
+							<dt>物品价格</dt>
+						</dl>
+						<dl class="z_left">
+							<dd>￥<input type="text" placeholder="0"/></dd>
+							<dt>佣金</dt>
+						</dl>
+						<div style="clear: both;"></div>
+					</div>
+				</div>
+		    </div>
+		    <div class="z_footer">
+		    	<button class="z_btn_choice">确认发布</button>
+		    </div>
+		    
+		</div>
+	
+	<script src="../Script/Libs/jquery.1.9.min.js"></script>
+	<script src="../Script/main.js"></script>
+	<script src="../Script/Controller/information_delivery.js"></script>
+	</body>
+</html>
