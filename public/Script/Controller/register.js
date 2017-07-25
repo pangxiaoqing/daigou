@@ -41,7 +41,7 @@
       * 注册接口
       * pxq 2017-07-21
       * */
-     //checkreg();
+     checkreg();
 //   $("#p_reg_btn").click(function(){
 //   	var myRegex = /@.*\.[a-z]{2,6}/;
 //   		var email = $("#register_email").val();
@@ -169,82 +169,64 @@
      	}else if($("#register_nickname").val() == ''){
      		$("#register_nickname").next().html("昵称不能为空，请输入昵称！");
      	}*/
-      var temp = $("#register_email").val();
+//    else if($("#register_password").val() == ''){
+//   		$("#register_password").next().html("密码不能为空，请重新输入！");
+//   		return false;
+//   	}else if($("#register_password2").val() == ''){
+//   		$("#register_password2").next().html("确认密码不能为空，请重新输入！");
+//   		return false;
+//   	}else if($("#register_nickname").val() == ''){
+//   		$("#register_nickname").next().html("昵称不能为空，请输入昵称！");
+//   		return false;
+//   	}else if($("#register_password").val() != $("#register_password2").val()){
+//   		$("#register_password2").next().html("密码和确认密码不一样!");
+//   		$("#register_password2").focus();
+//				return false;
+//   	}else if($("#register_nickname").val().length>10){
+//   		$("#register_nickname").next().html('请输入昵称，支持英文和汉字，不超过10位');
+//   		return false;
+//   	}else if($("#register_password").val().length<8 || $("#register_password").val().length>16){
+//   		$("#register_password").next().html("请输入8-16位的密码！");
+//   		$("#register_password").focus();
+//   		return false;
+//   	}else{}
+     		
+     		
+     		
+     	$("#register_email").blur(function(){
+     		var temp = $("#register_email").val();
 			//对电子邮件的验证
 			var myreg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
 			if(!myreg.test(temp)){
 				$("#register_email").next().html("请输入有效的Email地址!");
 				$("#register_email").focus();
 				return false;
-			}else if($("#register_password").val() == ''){
-     		$("#register_password").next().html("密码不能为空，请重新输入！");
-     		return false;
-     	}else if($("#register_password2").val() == ''){
-     		$("#register_password2").next().html("确认密码不能为空，请重新输入！");
-     		return false;
-     	}else if($("#register_nickname").val() == ''){
-     		$("#register_nickname").next().html("昵称不能为空，请输入昵称！");
-     		return false;
-     	}else if($("#register_password").val() != $("#register_password2").val()){
-     		$("#register_password2").next().html("密码和确认密码不一样!");
-     		$("#register_password2").focus();
-				return false;
-     	}else if($("#register_nickname").val().length>10){
-     		$("#register_nickname").next().html('请输入昵称，支持英文和汉字，不超过10位');
-     		return false;
-     	}else if($("#register_password").val().length<8 || $("#register_password").val().length>16){
-     		$("#register_password").next().html("请输入8-16位的密码！");
-     		$("#register_password").focus();
-     		return false;
-     	}else{}
-     		
-     		
-     		
-     	$("#register_email").blur(function(){
-     		var myRegex = /@.*\.[a-z]{2,6}/;
-     		var email = $("#register_email").val();
-     		email = email.replace(/^ | $/g,"");
-	      email = email.replace(/^\.*|\.*$/g,"");
-	      email = email.toLowerCase();
-	      //验证电子邮件的有效性
-	      if (email == "" || !myRegex.test(email)){
-	        $("#register_email").next().html("请输入有效的Email地址!");
-	        $("#register_email").focus();
-	        console.log("1a");
-	      }else{
+			}else{
 	      	$("#register_email").next().html('');
 	      	console.log("12");
-	      }
+	     }
      	});
      	$("#register_password").blur(function(){
      		if($("#register_password").val() == ''){
-	     		$("#register_password").next().html("请输入密码!");
-	     		$("#register_password").focus();
+	     		$("#register_password").next().html("密码不能为空，请重新输入！");
+	     		//$("#register_password").focus();
 	     		console.log("14444");
-	     		//return false;
+	     		return false;
 	     	}else if($("#register_password").val().length<8 || $("#register_password").val().length>16){
-	     		$("#register_password").next().html("密码长度限制在8-16位!");
-	     		$("#register_password").focus();
+	     		$("#register_password").next().html("请输入8-16位的密码！");
+	     		//$("#register_password").focus();
 	     		console.log("121");
-	     		//return false;
+	     		return false;
 	     	}
 	     	else{
 	     		$("#register_password").next().html('');
 	     	}
      	});
      	$("#register_password2").blur(function(){
-     		if($("#register_password2").val() == ''){
-	     		$("#register_password2").next().html("请输入密码!");
-	     		$("#register_password2").focus();
-	     		//return false;
-	     	}else if($("#register_password2").val().length<8 || $("#register_password2").val().length>16){
-	     		$("#register_password2").next().html("密码长度限制在8-16位!");
-	     		$("#register_password2").focus();
-	     		//return false;
-	     	}else if($("#register_password").val() != $("#register_password2").val()){
-	     		$("#register_password2").next().html("两次输入的密码不同!");
-	     		$("#register_password2").focus();
-	     		//return false;
+     		if($("#register_password").val() != $("#register_password2").val()){
+	     		$("#register_password2").next().html("密码和确认密码不一样,请重新输入！");
+	     		//$("#register_password2").focus();
+	     		return false;
 	     	}
 	     	else{
 	     		$("#register_password2").next().html('');
@@ -252,12 +234,12 @@
      	});
      	$("#register_nickname").blur(function(){
      		if($("#register_nickname").val() == ''){
-	     		$("#register_nickname").next().html("请输入昵称!");
-	     		$("#register_nickname").focus();
-	     		//return false;
+	     		$("#register_nickname").next().html("昵称不能为空，请输入昵称！");
+	     		//$("#register_nickname").focus();
+	     		return false;
 	     	}else if($("#register_nickname").val().length>10){
-	     		$("#register_nickname").next().html('请输入昵称，支持英文和汉字，不超过10位');
-	     		//return false;
+	     		$("#register_nickname").next().html('请输入昵称，支持英文和汉字，不超过10位哦！');
+	     		return false;
 	     	}
      		else{
      			$("#register_nickname").next().html('');
