@@ -2,30 +2,55 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width,target-densitydpi=device-dpi,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 		<meta name=”format-detection” content=”telephone=no” />
 		<!--<script type="text/javascript" src="../js/controller/flexible.js"></script>-->
 		<title>2017-07-11开会代购项目----发布航班信息</title>
 		<link rel="stylesheet" type="text/css" href="./../Styles/css/style.css">
+		<!--<link rel="stylesheet" type="text/css" href="./../Styles/css/DateTimePicker.css" />-->
+		
+		
+		<link rel="stylesheet" type="text/css" href="./../Styles/css/normalize3.0.2.min.css" />
+		<link rel="stylesheet" type="text/css" href="./../Styles/css/mobiscroll.css" />
+		<link rel="stylesheet" type="text/css" href="./../Styles/css/mobiscroll_date.css" />
 	</head>
 	<body class="p_fight_bg">
-		<div class="p_fight">
+		
+		<div class="p_fight" id="p_fight">
 			<div class="p_fight_box">
 				<h3>发布您的航班信息</h3>
 				<h5>寻找求购的小伙伴</h5>
 			</div>
-			<div class="p_fight_input">
-				<input class="p_log_emil p_fight_start" type="text" placeholder="选择航班始发地" />
-				<input class="p_log_password p_fight_end" type="text" placeholder="选择航班目的地" />
-				<input class="p_log_password p_fight_date" type="text" placeholder="选择航班到达日期" />
-				<button class="p_log_btn"><a href="javascript:;">完成</a></button>
+			
+			<div id="p_fight_input" class="p_fight_input">
+				<!--<input class="p_log_emil p_fight_start" type="text" placeholder="选择航班始发地" />
+				<input class="p_log_password p_fight_end" type="text" placeholder="选择航班目的地" />-->
+				<div class="p_reg_input">
+					<button id="p_start" class="p_fight_start p_fight_button">选择航班始发地</button>
+					<p></p>
+				</div>
+				<div class="p_reg_input">
+					<button id="p_end" class="p_fight_end p_fight_button p_fight_mar">选择航班目的地</button>
+					<p></p>
+				</div>
+				<div class="p_reg_input">
+					<input type="text" name="USER_AGE" id="USER_AGE" class="p_log_password p_fight_date" readonly class="input" placeholder="选择航班到达日期" />
+					<p></p>
+				</div>
+				<button id="p_over" class="p_log_btn p_over_color">完成</button>
 				<div class="p_forget_password p_fight_return"><a href="./../index.html">返回</a></div>
-			</div>
+			</div>	
 		</div>
+		<div id="p_city"></div>
 		<script type="text/javascript" src="./../Script/Libs/jquery.1.9.min.js"></script>
 		<script type="text/javascript" src="./../Script/main.js"></script>
+		<!--<script type="text/javascript" src="./../Script/Libs/DateTimePicker.js"></script>-->
+		<script type="text/javascript" src="./../Script/Libs/mobiscroll_date.js"></script>
+		<script type="text/javascript" src="./../Script/Libs/mobiscroll.js"></script>
+		<!--<script type="text/javascript" src="./../Script/Libs/moment.js"></script>
+		<script type="text/javascript" src="./../Script/Libs/bootstrap-datetimepicker.js"></script>-->
 		<script type="text/javascript" src="./../Script/Controller/p_fight_information.js"></script>
 	</body>
 </html>

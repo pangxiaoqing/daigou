@@ -39,7 +39,7 @@ body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, fo
   code, kbd, pre, samp { font-family:couriernew, courier, monospace; }
   small{ font-size:12px; }
   ul, ol { list-style:none; }
-  a { text-decoration:none; color:#565656;}
+  a { text-decoration:none; }
   a:hover { text-decoration:underline; }
   sup { vertical-align:text-top; }
   sub{ vertical-align:text-bottom; }
@@ -262,11 +262,12 @@ header h3 {
 	background-color: #f7c114;
 	border:none;
 	border-radius: 50px;
-	margin: 25px 0;
+	margin-top: 25px;
+}
+.p_log_btn a{
 	color: #232323;
 	font-size: 15px;
 }
-
 .p_forget_password{
 	margin-top: 20px;
 }
@@ -441,26 +442,7 @@ header h3 {
 	width:74%;
 	padding:0 3%;
 }
-/*.p_infor_cont li{
-	display: none;
-}
-.p_infor_cont li.p_infor_cont_cur{
-	display: block;
-}*/
-/*.p_infor_cont li span{
-	display: inline-block;
-	width:23%;
-	height: 30px;
-	line-height: 30px;
-	text-align: center;
-	border:1px solid #e7e7e7;
-	border-radius: 50px;
-	margin-top:5px;
-	text-overflow: ellipsis;
-	overflow: hidden;
-	white-space: nowrap;
-	padding:0 4%;
-}*/
+
 .p_infor_cont li{
 	display: inline-block;
 	width:23%;
@@ -477,45 +459,6 @@ header h3 {
 }
 
 
-
-
-
-
-/*.p_martop37{
-	margin-top: 37px;
-}
-.p_infor_title{
-	width:26%;
-}
-.p_infor_title li{
-	height:40px;
-	line-height: 40px;
-	text-align: center;
-	border-bottom: 1px solid #dee0dc;
-	background-color: #f2f1f6;
-}
-.p_infor_title li.p_infor_title_cur{
-	background-color:#fff;
-	border-left:2px solid #f7c114;
-}
-.p_infor_cont{
-	width:74%;
-	padding:0 3%;
-}
-.p_infor_cont li{
-	display: inline-block;
-	width:23%;
-	height: 30px;
-	line-height: 30px;
-	text-align: center;
-	border:1px solid #e7e7e7;
-	border-radius: 50px;
-	margin-top:5px;
-	text-overflow: ellipsis;
-	overflow: hidden;
-	white-space: nowrap;
-	padding:0 4%;
-}*/
 
     /*======交易详情页面开始======*/
     .z_wrap{
@@ -660,14 +603,15 @@ header h3 {
     margin-bottom: 5px;
     padding-left: 10%;
     outline: none;
+    font-size: 13px;
  }
  .z_div_black .z_input_m1{
  	background: url(../images/z_money1.png) no-repeat 97% 3px;
- 	background-size: 13%;
+ 	background-size: 11%;
  }
  .z_div_black .z_input_m2{
  	background: url(../images/z_money2.png) no-repeat 97% 3px;
- 	background-size: 13%;
+ 	background-size: 11%;
  }
  .z_text_div{
  	border-top: 1px solid #ccc;
@@ -858,7 +802,7 @@ header h3 {
  	display: inline-block;
  }
  .z_input_h5{
- 	width: 100%;
+ 	width: 50px;
  	height: 50px;
  	z-index: 1;
  	background: #ccc;
@@ -872,18 +816,18 @@ header h3 {
 	  z-index: 1;
  }
  .z_add_p{
- 	width: 100%;
+ 	width: 50px;
  	height: 50px;
  	position: absolute;
  	top: 0;
  	left: 0;
  }
- .z_add_pic{
+ /*.z_add_pic{
  	width: 16%;
  	height: 50px;
  	display: inline-block;
- }
- .z_information_p1{
+ }*/
+ .z_background .z_information_p1{
  	height: 43px;
  	border-top: 1px solid #ccc;
  	line-height: 40px;
@@ -891,7 +835,7 @@ header h3 {
  	margin-top: 10px;
  }
  .z_information_p1 img{
- 	width: 10%;
+ 	width:28px;
  	position: relative;
  	left: 2%;
  	top: 6px;
@@ -1113,9 +1057,7 @@ w_delicon
     font-size: 16px;
     color: #232323;
 }
-.y-bg{
-    background: #f7f7f7;
-}
+
 .y-bg2{
     background: #fff;
 }
@@ -1181,6 +1123,7 @@ w_delicon
     font-size: 14px;
     color: #a6a6a6;
     line-height: 23px;
+    font-weight: 100;
 }
 .y-region_bg{
     background: #f2f1f6;
@@ -1264,12 +1207,70 @@ w_delicon
 
 
 /*--------------------------------yhy页面样式结束-------------------------------------*/
+/*=========补充===================*/
+/*信息发布页面*/
+.z_information_p input{
+	width: 100%;
+	border: none;
+}
+.z_text_div textarea{
+	width: 100%;
+}
+.z_yellow{
+	color: #f7c114;
+}
+.z_city{
+	padding-left: 5%;
+}
+#y-titles1{
+	    position: fixed;
+    top: 0;
+    z-index: 10
+
+}
+/***************国家地区******************/ 
+/*.w_holder{height: 99px;visibility: hidden;}*/ 
+.z_holder{
+	height: 99px;
+	visibility: hidden;
+}
+.y-country{ 
+border-bottom: 1px solid #dee0dc; 
+} 
+.y-pad-lr{ 
+padding: 0 6.25% 0 5.25% 
+} 
+.y-bor_bottom{ 
+border-bottom: 1px solid #dee0dc; 
+} 
+#region_list a{
+	color: #232323;
+	font-size: 14px;
+	height: 40px;
+	line-height: 40px;
+	display: inline-block;
+	padding-left: 5%;
+	width: 100%;
+	text-decoration: none;
+}
+/********************国家地区 end*****************/ 
+/*********************搜索固定*********************/ 
+.y-locale { 
+overflow: hidden; 
+padding: 0 6.25% 0 5.25%; 
+background: #f7f7f7; 
+} 
+.y-bg{
+    background: #f7f7f7;
+    overflow: hidden;
+}
+/*********************搜索固定 end*********************/
 /*
  
- * 注册登录页面新加
+ * 注册登录页面新加前台验证
  * pxq 2017-07-24
  * */
-.p_regcont p,.p_logcont p{
+.p_regcont p,.p_logcont p,.p_forgetpw_cont p,.p_fight_input p{
 	color:#ff3f2b;
 	font-size: 12px;
 	background:url(../images/error.png) no-repeat 10px 3px;
@@ -1277,7 +1278,7 @@ w_delicon
 	text-align: left;
 	padding-left: 30px;
 }
-.p_regcont .p_reg_input,.p_logcont .p_reg_input{
+.p_regcont .p_reg_input,.p_logcont .p_reg_input,.p_forgetpw_cont .p_reg_input,.p_fight_input{
 	width:250px;
 	margin:0 auto;
 }
@@ -1292,4 +1293,41 @@ w_delicon
 .p_forgetpw_img{
 	width:80%;
 	margin:70px auto 0;
+}
+/*
+ 
+ * 发布航班信息
+ * pxq 2017-07-27
+ * */
+.p_fight_button{
+	text-align: left;
+	width:250px;
+	height:40px;
+	border:1px solid #e7e7e7;
+	border-radius: 50px;
+	color:#a6a6a6;
+	font-size:13px;
+	padding: 0 48px 0 26px;
+	margin-top:40px;
+}
+.p_fight_mar{
+	margin-top:15px;
+}
+.p_fight_color,.p_over_color{
+	color:#232323;
+}
+/*
+ 
+ * 个人中心-退出按钮
+ * pxq 2017-07-27
+ * */
+.p_quit{
+	width:100%;
+	text-align: center;
+	padding-bottom: 15px;;
+}
+.p_quit .p_quit_mar{
+	margin-top:0;
+	background-color: #ff3f2b;
+	color: #fff;
 }

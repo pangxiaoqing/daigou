@@ -11,6 +11,10 @@
 		$('.y-back').click(function(){
 			window.history.back();
 		})
+		$('#h-site').click(function(){
+			window.location.href='listWanted.html'
+		}
+		)
 
 	});
 }();

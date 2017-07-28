@@ -14,9 +14,11 @@
 				求购列表
 			</div>
 			<p class="w_holder"></p>
-			<ul class="w_bringlist w_collectlist w_wantedlist">
+			<ul class="w_bringlist w_collectlist w_wantedlist" id="p_buy_list">
 				<!--列表元素开始-->
-				<li>
+				
+				
+				<!--<li>
 					<div class="w_lititle">
 						<dl>
 							<dd>
@@ -42,118 +44,42 @@
 							</dl>
 						</div>
 					</div>
-				</li>
-				<!--列表元素结束-->
-				<li>
-					<div class="w_lititle">
-						<dl>
-							<dd>
-								<img src="../Styles/images/centercardbg.jpg"/>
-								<em>韩国泡菜不好吃</em>
-							</dd>
-							<dt>
-								<var>英国</var>
-								<var>美国</var>
-								<var>加拿大</var>
-							</dt>
-						</dl>
-					</div>
-					<div class="w_licon">
-						<div class="w_licon_con">
-							<img src="../Styles/images/centercardbg.jpg" alt="" />
-							<dl>
-								<dt>求购一坛82年韩国思密达泡菜</dt>
-								<dd>
-									<p>佣金<em>¥520</em></p>
-									<p class="w_fcolor1">2017-06-08</p>
-								</dd>
-							</dl>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="w_lititle">
-						<dl>
-							<dd>
-								<img src="../Styles/images/centercardbg.jpg"/>
-								<em>韩国泡菜不好吃</em>
-							</dd>
-							<dt>
-								<var>英国</var>
-								<var>美国</var>
-								<var>加拿大</var>
-							</dt>
-						</dl>
-					</div>
-					<div class="w_licon">
-						<div class="w_licon_con">
-							<img src="../Styles/images/centercardbg.jpg" alt="" />
-							<dl>
-								<dt>求购一坛82年韩国思密达泡菜</dt>
-								<dd>
-									<p>佣金<em>¥520</em></p>
-									<p class="w_fcolor1">2017-06-08</p>
-								</dd>
-							</dl>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="w_lititle">
-						<dl>
-							<dd>
-								<img src="../Styles/images/centercardbg.jpg"/>
-								<em>韩国泡菜不好吃</em>
-							</dd>
-							<dt>
-								<var>英国</var>
-								<var>美国</var>
-								<var>加拿大</var>
-							</dt>
-						</dl>
-					</div>
-					<div class="w_licon">
-						<div class="w_licon_con">
-							<img src="../Styles/images/centercardbg.jpg" alt="" />
-							<dl>
-								<dt>求购一坛82年韩国思密达泡菜</dt>
-								<dd>
-									<p>佣金<em>¥520</em></p>
-									<p class="w_fcolor1">2017-06-08</p>
-								</dd>
-							</dl>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="w_lititle">
-						<dl>
-							<dd>
-								<img src="../Styles/images/centercardbg.jpg"/>
-								<em>韩国泡菜不好吃</em>
-							</dd>
-							<dt>
-								<var>英国</var>
-								<var>美国</var>
-								<var>加拿大</var>
-							</dt>
-						</dl>
-					</div>
-					<div class="w_licon">
-						<div class="w_licon_con">
-							<img src="../Styles/images/centercardbg.jpg" alt="" />
-							<dl>
-								<dt>求购一坛82年韩国思密达泡菜</dt>
-								<dd>
-									<p>佣金<em>¥520</em></p>
-									<p class="w_fcolor1">2017-06-08</p>
-								</dd>
-							</dl>
-						</div>
-					</div>
-				</li>
+				</li>-->
 			</ul>
 		</div>
+		<!--
+			
+			求购列表模版
+			pxq 2017-07-28
+		-->
+		<script type="text/template" id="p_buy_list1">
+			<li>
+				<div class="w_lititle">
+					<dl>
+						<dd>
+							<img src="../Styles/images/centercardbg.jpg"/>
+							<em>%s</em>
+						</dd>
+						<dt id="p_start_area">
+							%d
+							<!--<var>%d</var>-->
+						</dt>
+					</dl>
+				</div>
+				<div class="w_licon">
+					<div class="w_licon_con">
+						<img src=%r alt="" />
+						<dl>
+							<dt>%m</dt>
+							<dd>
+								<p>佣金<em>%n</em></p>
+								<p class="w_fcolor1">%t</p>
+							</dd>
+						</dl>
+					</div>
+				</div>
+			</li>
+		</script>
 	</body>
 	<script src="../Script/Libs/jquery.1.9.min.js"></script>
 	<script src="../Script/main.js"></script>

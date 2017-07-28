@@ -14,6 +14,7 @@
 			})
 			$('.z_yes').click(function(){
 				methods.maskLayerObj.close();
+				window.location.href='myDeal.html'
 			})
 	      	$('.z_no').click(function(){
 				methods.maskLayerObj.close();

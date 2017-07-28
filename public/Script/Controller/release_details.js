@@ -42,12 +42,14 @@
 		
 		$('.z_yes').click(function(){
 			methods.maskLayerObj.close();
+			window.location.href='publicationRecord.html'
 		})
   	$('.z_no').click(function(){
 			methods.maskLayerObj.close();
 		})
   	$('.z_yes_1').click(function(){
 			methods.maskLayerObj.close();
+			window.location.href='../../index.html'
 		})
   	$('.z_no_1').click(function(){
 			methods.maskLayerObj.close();

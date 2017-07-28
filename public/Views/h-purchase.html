@@ -1,44 +1,91 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>选择购买地</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta content="width=device-width, initial-scale=1.0,minimum-scale=0.33, maximum-scale=1.0, user-scalable=yes" name="viewport">
-    <title>项目</title>
-    <link type="text/css" rel="stylesheet" href="../Styles/css/style.css"/>
-
-</head>
 <body style="background: #eeedeb;">
-<section id="y-titles" class="y-public y-header y-bg">
-    <div class="y-container">
-        <span class="y-back"></span>
-        <h3 class="y-title">选择购买地</h3>
-    </div>
-</section>
-<p class="w_holder"></p>
-<section class="y-public y-search y-content y-bg2">
-    <div class="y-container">
-        <input id="y-search" placeholder="输入要搜索的地区" type="text"/><input id="y-btn" type="button"/>
-    </div>
-</section>
-<section class="y-public y-bg2">
+	<div class="z_country_div1">
+		<section id="y-titles" class="y-public y-header">
+		    <div class="y-locale">
+		        <span class="y-back" id="z_back1"></span>
+		        <h3 class="y-title">选择购买地</h3>
+		    </div>
+		    <div class="y-bg">
+		        <div class="y-public y-search y-content y-bg2">
+		            <div class="y-container">
+		                <input id="y-search" placeholder="输入要搜索的地区" type="text"/><input id="y-btn" type="button"/>
+		            </div>
+		        </div>
+		    </div>
+		</section>
+		<p class="w_holder z_holder"></p>
+		<section class="y-public  y-bg2">
+			
+		    <div class="h-words">
+		        <div class="y-container">
+		            <p class="h-words">全世界</p>
+		        </div>
+		    </div>
+		    <div id="z_countryList">
+		    	
+		    </div>
+		  
+		    
+		</section>
+	</div>
+
+<div class="z_country_div2" style="display: none;">
+	<section id="y-titles1" class="y-public y-header">
+		    <div class="y-locale">
+		        <span class="y-back" id="z_back2"></span>
+		        <h3 class="y-title">选择购买地</h3>
+		    </div>
+		    <div class="y-bg">
+		        <div class="y-public y-search y-content y-bg2">
+		            <div class="y-container">
+		                <input id="y-search" placeholder="输入要搜索的地区" type="text"/><input id="y-btn" type="button"/>
+		            </div>
+		        </div>
+		    </div>
+	</section>
+	<p class="w_holder z_holder"></p>
+	<section class="y-public y-bg2">
     <div class="h-words">
         <div class="y-container">
-            <p class="h-words">全世界</p>
-        </div>
-    </div>
-    <div class="h-country">
-        <div class="y-container">
-            <p class="h-words">中国<img class="h-enter" src='../Styles/images/h-enter.png' alt="国家"/></p>
-        </div>
-    </div>
-    <div class="h-country">
-        <div class="y-container">
-            <p class="h-words">美国<img class="h-enter" src='../Styles/images/h-enter.png' alt="国家"/></p>
+            <p class="h-words">不限</p>
         </div>
     </div>
 </section>
+
+<section class="y-public y-bg2">
+ 
+</section>
+<section class="y-public y-bg2" id="region_list">
+   
+</section>
+
+</div>
+<!--国家模板-->
+<script type="text/template" id="z_country">
+	<div class="h-country">
+        <div class="y-container">
+            <p class="h-words" country_id='%i'>%c<img class="h-enter" src='../Styles/images/h-enter.png' alt="国家"/></p>
+        </div>
+    </div>
+</script>
+<!--城市生成A-Z排序-->
+<script type="text/template" id="spell_script">
+	
+	<div class="y-region">
+        <div class="y-region_bg">
+            <h5 class="y-container h-font">%s</h5>
+        </div>
+        %l
+
+    </div>
+</script>
+<!--城市模板-->
+<script type="text/template" id="spell_list">
+	<div class="h-case"> 
+		<p class="h-words z_city" country_id='%d' country_name='%g'>%g</p>
+        <!--<a href="information_delivery.html?id=%d&country_name=%g" region_id="%d">%g</a>-->
+    </div>
+</script>
 <script src="../Script/Libs/jquery.1.9.min.js"></script>
 <script src="../Script/main.js"></script>
 <script src="../Script/Controller/h-purchase.js"></script>

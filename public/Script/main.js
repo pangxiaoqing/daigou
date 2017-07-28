@@ -57,12 +57,18 @@
 			}
 		},
 		port :'http://10.168.195.86:3001',
-		getQueryString : function(name) { 
+		getQueryString : function(name) {  
 		        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");  
 		        var r = window.location.search.substr(1).match(reg);  
 		        if (r != null) return unescape(r[2]);  
 		        return null;  
-	   	},
+	   },
+	   getUrlParam :function(name){
+	   	var reg= new RegExp("(^|&)"+name +"=([^&]*)(&|$)");
+        var r= window.location.search.substr(1).match(reg);
+        if (r!=null) return unescape(r[2]); return null;
+	   },
+
 		send : function(obj,callback){
 			var url = obj.url,
 				type = obj.type || 'get',
@@ -76,7 +82,7 @@
 				data : data,
 				dataType : dataType,
 				success : function(msg){
-					//console.log(msg)
+//					console.log(msg)
 					callback.call(self,msg);
 				},
 				error : function(e,t){

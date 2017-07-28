@@ -6,19 +6,17 @@
   ];
   	var service = hmd.service;
     hmd.require(url_arr,function(){
-
-      $('.login_btn').click(function(){
-        service.oLogin(function(data){
-          console.log(data)
-        })
-      })
+			 $('.z_return').click(function(){
+		    	window.history.back();
+		    })
+    	$('.z_btn_trans').click(function(){
+    		window.location.href='../../index.html'
+    	})
     
 //    hmd.data($('.pp')[0],'test','lala')
 //    console.log(hmd.data($('.pp')[0],'test'));
-      console.log(hmd.getElementByAttr('oid'))
+//    console.log(hmd.getElementByAttr('oid'))
     })
-    $('.z_return').click(function(){
-    	window.history.back();
-    })
+   
 
 }();

@@ -7,63 +7,133 @@
 		<link href="../Styles/css/style.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body style="height: 100%;">
-		<div class="z_wrap z_flex z_flex-v ">
+		<div class="z_wrap z_flex z_flex-v z_infor">
 		    <div class="z_header"><h3><img src="../Styles/images/goback.png"  class="z_return"/>信息发布</h3></div>
+		  
 		    <div class="z_main z_flex-1 z_main_information">
+		    	<form id="z_myform" enctype="multipart/form-data">
 		    	<div class="z_background">
-		    	<p class="z_information_p">求购一坛82年韩国思密达泡菜，需要包装完好，要不发霉
-的，最好是能吃的！</p>
+		    	<p class="z_information_p"><input type='text' name="info_title" class="z_title_name" placeholder='名称'/></p>
 		    	<div class="z_text_div">
-					<textarea  class="none" cols="58" rows="6" id="textarea" onfocus="if(value=='详细描述一下您的求购物品'){value=''}"  
+					<textarea   name="info_desc" class="none" cols="58" rows="6" id="textarea" onfocus="if(value=='详细描述一下您的求购物品'){value=''}"  
 	    onblur="if (value ==''){value='详细描述一下您的求购物品'}">详细描述一下您的求购物品</textarea>  
 	
 				</div>
-				<img src="../Styles/images/z_add_add.png" class="z_add_pic" />
+				<div id="fileList" class="z_add_pic z_left" ></div>
 				<div class="z_inp">
-				<input accept="image/*" type="file" class="z_input_h5">
+				<input type="file" id="fileElem" name="img" multiple accept="image/*" class="z_input_h5 z_left" onchange="handleFiles(this)">
+
 				<img src="../Styles/images/z_add_p.png" class="z_add_p"/>
+				
 				</div>	
-				<p class="z_information_p1"><span>分类</span><span class="z_choice_span">选择分类</span><img src="../Styles/images/z_more.png" class="z_more" /></p>
+				<span><span class="z_yellow">0</span>/<span>5</span></span>
+				<p class="z_information_p1"><span>分类</span><span class="z_choice_span">选择分类</span>
+					<img src="../Styles/images/z_more.png" class="z_more" />
+				</p>
 				</div>
-				<div class="z_goodsadd">
-					<p>请选择物品区域</p>
-					<div class="z_add_country">
-						<span class="z_country z_country1">美国<img src="../Styles/images/z_cancel.png"/></span>
-						<span class="z_country z_country1 ">意大利<img src="../Styles/images/z_cancel.png"/></span>
-						<img src="../Styles/images/z_add_add.png" class="z_add_add "/>
-						<div style="clear: both;"></div>
-					</div>
-				</div>	
-				<div class="z_goodsadd">
-					<p>请选择物品区域</p>
-					<div class="z_add_country">
-						<img src="../Styles/images/z_add_add.png" class="z_add_add"/>
-					</div>
-				</div>	
+				<div id= "z_oid"  for=''>
+					<div class="z_goodsadd">
+						<p>请选择物品区域</p>
+						<div class="z_add_country z_add_country1">
+							<img src="../Styles/images/z_add_add.png" class="z_add_add" id="z_add_add1"/>
+							<div style="clear: both;"></div>
+							<input type="hidden" name="" />
+						</div>
+					</div>	
+					<div class="z_goodsadd">
+						<p>请选择目的地</p>
+						<div class="z_add_country z_add_country2">
+							<img src="../Styles/images/z_add_add.png" class="z_add_add" id="z_add_add2"/>
+						</div>
+					</div>	
+				</div>
 				<div class="z_goodsadd z_goodsadd1">
-					<!--<img src="../Styles/images/z_shuxian.png"/>-->
 					<p>请选择费用</p>
 					<div class="z_money">
 						<dl class="z_left">
-							<dd>￥<input type="text" placeholder="0"/></dd>
+							<dd>￥<input type="text" name='order_price' class="z_pic_1" placeholder="0"/></dd>
 							<dt>物品价格</dt>
 						</dl>
 						<dl class="z_left">
-							<dd>￥<input type="text" placeholder="0"/></dd>
+							<dd>￥<input type="text" class="z_pic_2" name="service_fee" placeholder="0"/></dd>
 							<dt>佣金</dt>
 						</dl>
 						<div style="clear: both;"></div>
 					</div>
 				</div>
+				<input type="hidden" id="category_id" name="category_id"/>
+			    <input type="hidden" id="good_from" name="good_from"/>
+			    <input type="hidden" id="good_to" name="good_to"/>
+			    <input type="hidden" id="token" name="token"/>
+			    <input type="hidden" id="userid" name="userid"/>
+		     </form>
 		    </div>
+		   
+		   
 		    <div class="z_footer">
-		    	<button class="z_btn_choice">确认发布</button>
+		    	<button class="z_btn_choice" type="button">确认发布</button>
 		    </div>
-		    
+		   	
+		  
 		</div>
-	
+		
+	<div style="display: none;" id="layer_country"></div>
 	<script src="../Script/Libs/jquery.1.9.min.js"></script>
+	<script src="../Script/Libs/jquery.form.js"></script>
 	<script src="../Script/main.js"></script>
 	<script src="../Script/Controller/information_delivery.js"></script>
+	<script>
+	//zss本地预览图片
+		window.URL = window.URL || window.webkitURL;
+    var fileElem = document.getElementById("fileElem"),
+    fileList = document.getElementById("fileList");
+    function handleFiles(obj) {
+        var files = obj.files,
+        img = new Image();
+        if(window.URL){
+            //File API
+//          alert(files[0].name + "," + files[0].size + " bytes");
+            img.src = window.URL.createObjectURL(files[0]); //创建一个object URL，并不是你的本地路径
+            img.width = 200;
+            img.onload = function(e) {
+                window.URL.revokeObjectURL(this.src); //图片加载后，释放object URL
+            }
+            img.style.display='inline-block'
+            img.style.width='50px'
+            img.style.height='50px'
+//          img.style.float='left'
+			var count = $('.z_yellow').text()
+			count++;
+			if(count>=6){
+				count=5
+				return;
+			}
+			$('.z_yellow').text(count)
+            fileList.appendChild(img);
+        }else if(window.FileReader){
+            //opera不支持createObjectURL/revokeObjectURL方法。我们用FileReader对象来处理
+            var reader = new FileReader();
+            reader.readAsDataURL(files[0]);
+            reader.onload = function(e){
+                alert(files[0].name + "," +e.total + " bytes");
+                img.src = this.result;
+                img.width = 50;
+                fileList.appendChild(img);
+            }
+        }else{
+            //ie
+            obj.select();
+            obj.blur();
+            var nfile = document.selection.createRange().text;
+            document.selection.empty();
+            img.src = nfile;
+            img.width = 50;
+            img.onload=function(){
+                alert(nfile+","+img.fileSize + " bytes");
+            }
+            fileList.appendChild(img);
+        }
+    }  
+	</script>
 	</body>
 </html>
